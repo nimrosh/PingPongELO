@@ -27,7 +27,6 @@ CsvToHtmlTable = {
                 for (var rowIdx = 1; rowIdx < csvData.length; rowIdx++) {
                     console.log(decryptAES(csvData[rowIdx][1]))
                     csvData[rowIdx][1] = decryptAES(csvData[rowIdx][1])
-                    csvData[rowIdx][2] = decryptAES(csvData[rowIdx][2])
                 }
                 
                 var $tableHead = $("<thead></thead>");
@@ -77,7 +76,7 @@ CsvToHtmlTable = {
                 return plaintext.trim();
             } catch(e) {
                 console.error("Decryption failed:", e);
-                return encryptedText;
+                return encrypted_text;
             }
         }
     }
