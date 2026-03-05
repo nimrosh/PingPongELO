@@ -25,8 +25,9 @@ CsvToHtmlTable = {
                 var csvData = $.csv.toArrays(data, csv_options);
 
                 for (var rowIdx = 1; rowIdx < csvData.length; rowIdx++) {
-                    console.log(decryptAES(csvData[rowIdx][1]))
-                    csvData[rowIdx][1] = decryptAES(csvData[rowIdx][1])
+                    //console.log(decryptAES(csvData[rowIdx][1]));
+                    csvData[rowIdx][1] = decryptAES(csvData[rowIdx][1]);
+                    csvData[rowIdx][2] = Math.round(csvData[rowIdx][2]);
                 }
                 
                 var $tableHead = $("<thead></thead>");
